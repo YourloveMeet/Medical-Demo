@@ -20,6 +20,10 @@ body {
   color: #1a1a1a;
 }
 
+/* ==========================================
+   CORE ANIMATIONS
+   ========================================== */
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -62,6 +66,30 @@ body {
   }
 }
 
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(74, 124, 111, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(74, 124, 111, 0.3);
+  }
+}
+
+/* ==========================================
+   ANIMATION UTILITY CLASSES
+   ========================================== */
+
 .anim-fade-up {
   opacity: 0;
   animation: fade-up 700ms ease-out forwards;
@@ -84,6 +112,14 @@ body {
   animation-delay: 360ms;
 }
 
+.anim-delay-4 {
+  animation-delay: 480ms;
+}
+
+.anim-delay-5 {
+  animation-delay: 600ms;
+}
+
 .anim-float-soft {
   animation: float-soft 7.5s ease-in-out infinite;
 }
@@ -91,6 +127,19 @@ body {
 .anim-drift {
   animation: drift 11s ease-in-out infinite;
 }
+
+.anim-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.anim-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* ==========================================
+   HOVER & INTERACTION UTILITIES
+   ========================================== */
 
 .hover-lift {
   transition: transform 250ms ease, box-shadow 250ms ease,
@@ -102,7 +151,24 @@ body {
   box-shadow: 0 20px 36px rgba(63, 82, 74, 0.17);
 }
 
-/* Loader Animations */
+/* ==========================================
+   SECTION TRANSITION UTILITIES
+   ========================================== */
+
+.section-dark {
+  background-color: #0f1614;
+  color: #e8ede8;
+}
+
+.section-light {
+  background-color: #e8ede8;
+  color: #1a1a1a;
+}
+
+/* ==========================================
+   LOADER ANIMATIONS
+   ========================================== */
+
 @keyframes blur-reveal {
   0% {
     opacity: 0;
@@ -169,6 +235,40 @@ body {
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(300%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR (DARK THEME SECTIONS)
+   ========================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 124, 111, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 124, 111, 0.5);
+}
+
+/* ==========================================
+   SELECTION STYLES
+   ========================================== */
+
+::selection {
+  background-color: rgba(74, 124, 111, 0.25);
+  color: inherit;
 }

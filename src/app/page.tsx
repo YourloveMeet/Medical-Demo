@@ -1,4 +1,6 @@
+import { AboutDoctor } from "@/components/about-doctor";
 import { BookingPanel } from "@/components/booking-panel";
+import { CertificationsSection } from "@/components/certifications-section";
 import { FaqSection } from "@/components/faq-section";
 import { FinalCta } from "@/components/final-cta";
 import { HeroCopy } from "@/components/hero-copy";
@@ -23,6 +25,7 @@ export default function Home() {
 
       <SiteHeader />
 
+      {/* Hero Section — UNTOUCHED */}
       <section className="relative z-10 mx-auto grid min-h-screen w-[min(94%,1440px)] grid-cols-1 items-start pb-10 pt-32 md:grid-cols-[1.2fr_0.8fr_1.1fr] md:items-center md:gap-4 lg:grid-cols-[1fr_0.6fr_0.9fr]">
         <div className="anim-fade-up anim-delay-1 flex h-full items-center">
           <HeroCopy />
@@ -37,15 +40,16 @@ export default function Home() {
 
       <TrustStrip />
 
-      <div className="relative z-10">
-        <ServicesSection />
-        <ProcessSection />
-        <ResultsSection />
-        <TestimonialsSection />
-        <FaqSection />
-        <FinalCta />
-        <SiteFooter />
-      </div>
+      {/* Redesigned Sections */}
+      <AboutDoctor />
+      <ServicesSection />
+      <ProcessSection />
+      <ResultsSection />
+      <TestimonialsSection />
+      <CertificationsSection />
+      <FaqSection />
+      <FinalCta />
+      <SiteFooter />
     </main>
   );
 }

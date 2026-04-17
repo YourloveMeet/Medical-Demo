@@ -1,6 +1,8 @@
+import { BlurText } from "./animations/blur-text";
+
 export function HeroCopy() {
   return (
-    <div className="flex flex-col justify-center gap-12 py-10 md:pr-8">
+    <div className="flex flex-col justify-center gap-12 py-10 md:pr-8 z-10 relative">
       <div className="max-w-[520px]">
         <div className="mb-8 overflow-hidden">
           <p className="anim-fade-up inline-flex items-center gap-2 rounded-full border border-[#73867e]/30 bg-white/40 px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.25em] text-[#3D4D47] backdrop-blur-md">
@@ -9,15 +11,12 @@ export function HeroCopy() {
           </p>
         </div>
 
-        <h1 className="anim-fade-up anim-delay-1 font-serif text-[68px] font-medium leading-[0.9] tracking-tight text-[#111815] md:text-[84px] lg:text-[100px]">
-          Restoring
-          <br />
-          <span className="text-[#4A7C6F]">Movement</span>,
-          <br />
-          Elevating
-          <br />
-          Life
-        </h1>
+        <BlurText
+          text="Restoring \n {hlt}Movement,{/hlt} \n Elevating \n Life"
+          className="font-serif text-[68px] font-medium leading-[0.9] tracking-tight text-[#111815] md:text-[84px] lg:text-[100px]"
+          delay={0.2}
+          duration={1.2}
+        />
 
         <p className="anim-fade-up anim-delay-2 mt-8 max-w-[480px] text-xl leading-relaxed text-[#45524D]">
           We blend advanced manual therapy, spinal rehabilitation, and
