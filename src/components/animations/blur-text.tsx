@@ -45,8 +45,10 @@ export function BlurText({
     }
   };
 
+  const Component = Tag as any;
+
   return (
-    <Tag className={className}>
+    <Component className={className}>
       <motion.span
         variants={container}
         initial="hidden"
@@ -92,6 +94,6 @@ export function BlurText({
           );
         })}
       </motion.span>
-    </Tag>
+    </Component>
   );
 }

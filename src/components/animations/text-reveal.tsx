@@ -49,12 +49,14 @@ export function TextReveal({
     { scope: containerRef }
   );
 
+  const Component = Tag as any;
+
   return (
-    <Tag className={className}>
+    <Component className={className}>
       <div ref={containerRef} className="overflow-hidden">
         <div className="reveal-line">{children}</div>
       </div>
-    </Tag>
+    </Component>
   );
 }
 

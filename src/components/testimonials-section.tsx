@@ -66,8 +66,10 @@ export function TestimonialsSection() {
 
   useGSAP(
     () => {
+      const target = sectionRef.current?.querySelector(".testimonial-container");
+      if (!target) return;
       gsap.fromTo(
-        sectionRef.current?.querySelector(".testimonial-container"),
+        target,
         { y: 60, opacity: 0 },
         {
           y: 0,
